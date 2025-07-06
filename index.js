@@ -6,7 +6,12 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 dotenv.config();
 
-const authToken = process.env.AUTHTOKEN;
+const authToken =
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+    .eyJzdWIiOiJzaGFtaW1pc2xhbW9ubGluZUBnbWFpbC5jb20iLCJpYXQiOjE3NDM1OTI0MTR9
+    .q2v1Gfe -
+  MmM0MjX7WoisSuqEqvjVGuhG0 -
+  bdV_IEwd8;
 
 console.log("AUTH TOKENn:", authToken);
 
