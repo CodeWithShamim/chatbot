@@ -6,14 +6,15 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 dotenv.config();
 
-const authToken =
-  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-    .eyJzdWIiOiJzaGFtaW1pc2xhbW9ubGluZUBnbWFpbC5jb20iLCJpYXQiOjE3NDM1OTI0MTR9
-    .q2v1Gfe -
-  MmM0MjX7WoisSuqEqvjVGuhG0 -
-  bdV_IEwd8;
+console.log("🔑 ENV:", process.env); // only for debug
+console.log("✅ AUTHTOKEN:", process.env.AUTHTOKEN);
 
-console.log("AUTH TOKENn:", authToken);
+if (!process.env.AUTHTOKEN) {
+  console.error("❌ AUTHTOKEN is missing. Check Railway Variables.");
+  process.exit(1);
+}
+
+const authToken = process.env.AUTHTOKEN;
 
 // API Configuration
 const URL = "https://api.hyperbolic.xyz/v1/chat/completions";
