@@ -8,6 +8,8 @@ dotenv.config();
 
 const authToken = process.env.AUTHTOKEN;
 
+console.log("AUTH TOKENn:", authToken);
+
 // API Configuration
 const URL = "https://api.hyperbolic.xyz/v1/chat/completions";
 const HEADERS = {
