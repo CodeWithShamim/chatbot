@@ -55,6 +55,9 @@ async function runChatBot() {
   console.log("Starting automated chat bot...");
   let availableQuestions = [...questions];
 
+  // Random delay between 20-60 seconds
+  const delay = Math.random() * (60 - 20) + 20;
+
   for (let i = 0; i < totalQuestions; i++) {
     if (availableQuestions.length === 0) {
       console.log("Ran out of questions unexpectedly!");
@@ -70,9 +73,6 @@ async function runChatBot() {
     const answer = await sendChatRequest(question);
 
     console.log(`Answer: ${answer}`);
-
-    // Random delay between 20-60 seconds
-    const delay = Math.random() * (60 - 20) + 20;
 
     console.log(`Waiting ${delay.toFixed(1)} seconds before next question...`);
 
